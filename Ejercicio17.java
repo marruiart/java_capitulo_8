@@ -13,14 +13,13 @@ public class Ejercicio17 {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         System.out.print("Por favor, introduce un número binario: ");
-        long binary = s.nextInt();
+        long binary = s.nextLong();
         s.close();
         long decimal = 0;
         int i = 0;
         while (binary > 0) {
             int lastDigit = (int) (binary % 10);
-            if (lastDigit == 1)
-                decimal += General.power(2, i);
+            decimal += (General.power(2, i) * lastDigit);
             binary /= 10;
             i++;
         }
