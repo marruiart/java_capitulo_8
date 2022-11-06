@@ -107,4 +107,19 @@ public class Array {
         return -1;
     }
 
+    /**
+     * Le da la vuelta a un array.
+     * 
+     * @param array un array de enteros
+     * @return el array volteado
+     **/
+
+    public static int[] flipArray(int[] array) {
+        int length = array.length;
+        int[] flippedArray = new int[length];
+        for (int i = 0; i < length; i++)
+            flippedArray[length - i - 1] = array[i];
+        return flippedArray;
+    }
+
 }
