@@ -74,4 +74,21 @@ public class Array {
         return average;
     }
 
+    /**
+     * Dice si un número está o no dentro de un array.
+     * 
+     * @param array un array de enteros
+     * @param num   un número entero a buscar en el array
+     * @return <code> true </code> si el número se encuentra en el array
+     *         <code> false </code> si no se encuentra.
+     **/
+
+    public static boolean isInArray(int[] array, int num) {
+        boolean isInArray = false;
+        for (int i = 0; i < array.length; i++)
+            if (array[i] == num)
+                isInArray = true;
+        return isInArray;
+    }
+
 }
