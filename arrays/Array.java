@@ -84,11 +84,27 @@ public class Array {
      **/
 
     public static boolean isInArray(int[] array, int num) {
-        boolean isInArray = false;
         for (int i = 0; i < array.length; i++)
             if (array[i] == num)
-                isInArray = true;
-        return isInArray;
+                return true;
+        return false;
+    }
+
+    /**
+     * Busca un número en un array y devuelve la posición (el índice) en la que se
+     * encuentra.
+     * 
+     * @param array un array de enteros
+     * @param num   un número entero a buscar en el array
+     * @return el índice en el que se encuentra el número en el array. -1 si no se
+     *         encuentra
+     **/
+
+    public static int positionInArray(int[] array, int num) {
+        for (int i = 0; i < array.length; i++)
+            if (array[i] == num)
+                return i;
+        return -1;
     }
 
 }
