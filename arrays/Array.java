@@ -122,4 +122,52 @@ public class Array {
         return flippedArray;
     }
 
+    /**
+     * Rota n posiciones a la derecha los números de un array.
+     * 
+     * @param array un array de enteros
+     * @param n     las posiciones a rotar a la derecha
+     * @return el array rotado n posiciones a la derecha. Un array vacío si la n es
+     *         superior o igual al tamaño del array o un número negativo
+     **/
+
+    public static int[] rotateArrayToRight(int[] array, int n) {
+        int length = array.length;
+        int[] rotatedArray = new int[length];
+        if (n >= length || n < 0)
+            return rotatedArray;
+        int j = n;
+        for (int i = 0; i < length; i++) {
+            if (j >= length)
+                j = 0;
+            rotatedArray[j] = array[i];
+            j++;
+        }
+        return rotatedArray;
+    }
+
+    /**
+     * Rota n posiciones a la izquierda los números de un array.
+     * 
+     * @param array un array de enteros
+     * @param n     las posiciones a rotar a la izquierda
+     * @return el array rotado n posiciones a la izquierda. Un array vacío si la n
+     *         es superior o igual al tamaño del array o un número negativo
+     **/
+
+    public static int[] rotateArrayToLeft(int[] array, int n) {
+        int length = array.length;
+        int[] rotatedArray = new int[length];
+        if (n >= length || n < 0)
+            return rotatedArray;
+        int j = n;
+        for (int i = 0; i < length; i++) {
+            if (j >= length)
+                j = 0;
+            rotatedArray[i] = array[j];
+            j++;
+        }
+        return rotatedArray;
+    }
+
 }
