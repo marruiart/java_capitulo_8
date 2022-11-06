@@ -58,4 +58,20 @@ public class Array {
         return max;
     }
 
+    /**
+     * Devuelve la media del array que se pasa como parámetro.
+     * 
+     * @param array un array de enteros
+     * @return un float que indica la media de los números del array.
+     **/
+
+    public static float averageArrayInt(int[] array) {
+        int sum = 0;
+        float average;
+        for (int i = 0; i < array.length; i++)
+            sum += array[i];
+        average = (float) sum / array.length;
+        return average;
+    }
+
 }
