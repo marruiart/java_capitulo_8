@@ -34,19 +34,36 @@ public class Bidimensional {
     /**
      * Devuelve la fila i-ésima del array que se pasa como parámetro.
      * 
-     * @param n   número de filas del array
-     * @param m   número de columnas del array
-     * @param max valor máximo del intervalo de números aleatorios
-     * @param min valor mínimo del intervalo de números aleatorios
+     * @param array array bidimensional de enteros
+     * @param irow  fila que se quiere obtener del array
      * @return array de tamaño n relleno de números aleatorios. Devuelve un array
      *         vacío en caso de error
      **/
 
-    public static int[] rowOfArrayBiInt(int array[][], int i) {
-        int[] row = new int[array[i].length];
-        for (int j = 0; j < array[i].length; j++)
-            row[j] = array[i][j];
+    public static int[] rowOfArrayBiInt(int array[][], int irow) {
+        int length = array[irow].length;
+        int[] row = new int[length];
+        for (int j = 0; j < length; j++)
+            row[j] = array[irow][j];
         return row;
+    }
+
+    /**
+     * Devuelve la columna j-ésima del array que se pasa como parámetro.
+     * 
+     * @param array   array bidimensional de enteros
+     * @param jcolumn columna que se quiere obtener del array
+     * @return array de tamaño n relleno de números aleatorios. Devuelve un array
+     *         vacío en caso de error
+     **/
+
+    public static int[] columnOfArrayBiInt(int array[][], int jcolumn) {
+        int length = array.length;
+        int[] column = new int[length];
+        for (int i = 0; i < length; i++)
+            for (int j = 0; j < array[i].length; j++)
+                column[i] = array[i][jcolumn];
+        return column;
     }
 
 }
