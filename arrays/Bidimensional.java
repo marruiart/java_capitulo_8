@@ -92,4 +92,32 @@ public class Bidimensional {
         return position;
     }
 
+    /**
+     * Dice si un número es o no punto de silla, es decir, mínimo en su fila y
+     * máximo en su columna.
+     * 
+     * @param array  array bidimensional de enteros
+     * @param row    posición del número en la fila
+     * @param column posición del número en la columna
+     * @return <code> true </code> si el número es punto de silla
+     *         <code> false </code> si no lo es.
+     **/
+
+    public static boolean isiMinjMax(int array[][], int row, int column) {
+        int rows = array.length;
+        int columns = array[0].length;
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+
+        for (int i = 0; i < rows; i++)
+            if (array[i][column] > max)
+                max = array[i][column];
+        for (int j = 0; j < columns; j++)
+            if (array[row][j] < min)
+                min = array[row][j];
+
+        boolean isiMinjMax = (array[row][column] == min && array[row][column] == max) ? true : false;
+        return isiMinjMax;
+    }
+
 }
