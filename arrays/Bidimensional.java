@@ -66,4 +66,30 @@ public class Bidimensional {
         return column;
     }
 
+    /**
+     * Devuelve la fila y la columna (en un array con dos elementos) de la primera
+     * ocurrencia de un número dentro de un array bidimensional.
+     * 
+     * @param array array bidimensional de enteros
+     * @param n     número buscado
+     * @return un array de dos elementos con la fila y la columna con la primera
+     *         posición encontrada en el array bidimensional. Si no se encuentra,
+     *         devuelve {-1,-1}
+     **/
+
+    public static int[] coordinatesInArrayBiInt(int array[][], int n) {
+        int rows = array.length;
+        int columns = array[0].length;
+        int[] position = { -1, -1 };
+
+        for (int i = 0; i < rows; i++)
+            for (int j = 0; j < columns; j++)
+                if (array[i][j] == n) {
+                    position[0] = i;
+                    position[1] = j;
+                    return position;
+                }
+        return position;
+    }
+
 }
