@@ -104,20 +104,11 @@ public class Bidimensional {
      **/
 
     public static boolean isiMinjMax(int array[][], int row, int column) {
-        int rows = array.length;
-        int columns = array[0].length;
-        int min = Integer.MAX_VALUE;
-        int max = Integer.MIN_VALUE;
-
-        for (int i = 0; i < rows; i++)
-            if (array[i][column] > max)
-                max = array[i][column];
-        for (int j = 0; j < columns; j++)
-            if (array[row][j] < min)
-                min = array[row][j];
-
+        int max = Array.maxArrayInt(columnOfArrayBiInt(array, column));
+        int min = Array.minArrayInt(rowOfArrayBiInt(array, row));
         boolean isiMinjMax = (array[row][column] == min && array[row][column] == max) ? true : false;
         return isiMinjMax;
     }
+
 
 }
