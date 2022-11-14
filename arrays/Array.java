@@ -1,6 +1,7 @@
 package arrays;
 
 /**
+ * Ejercicios 20 - 28
  * Biblioteca de funciones para arrays (de una dimensión) de números enteros.
  *
  * @author: Marina Ruiz Artacho

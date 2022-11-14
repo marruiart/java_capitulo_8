@@ -1,6 +1,7 @@
 package maths;
 
 /**
+ * Ejercicios 1 - 14
  * Biblioteca de funciones matemáticas de caracter general.
  *
  * @author: Marina Ruiz Artacho

@@ -1,6 +1,7 @@
 package arrays;
 
 /**
+ * Ejercicios 29 - 34
  * Biblioteca de funciones para arrays bidimensionales (de dos dimensiones) de
  * números enteros.
  *
