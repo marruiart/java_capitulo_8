@@ -135,4 +135,40 @@ public class Miscellanea {
         return palindromics;
     }
 
+    /**
+     * Convierte los dígitos del número n en las correspondientes palabras y lo
+     * devuelve todo en una cadena de caracteres.
+     * 
+     * @param n un número entero
+     * @return un String con las palabras que conforman el número.
+     **/
+
+    public static String convierteEnPalabras(int n) {
+        String[] wordsArray = {
+                "cero",
+                "uno",
+                "dos",
+                "tres",
+                "cuatro",
+                "cinco",
+                "seis",
+                "siete",
+                "ocho",
+                "nueve"
+        };
+        int digits = maths.General.digitos(n);
+        String[] numWords = new String[digits];
+        for (int i = 0; i < digits; i++) {
+            numWords[i] = wordsArray[n % 10];
+            n /= 10;
+        }
+        String numInWords = "";
+        for (int i = digits - 1; i >= 0; i--) {
+            numInWords += numWords[i];
+            if (i > 0)
+                numInWords += ", ";
+        }
+        return numInWords;
+    }
+
 }
