@@ -74,7 +74,7 @@ public class Miscellanea {
      * caracteres.
      * 
      * @param n un número entero
-     * @return String del número convertido a palotes.
+     * @return String del número convertido a morse.
      **/
 
     public static String convierteEnMorse(int n) {
@@ -102,4 +102,37 @@ public class Miscellanea {
         }
         return morse;
     }
+
+    /**
+     * Devuelve un array con todos los números capicúa que se encuentren en otro
+     * array que se pasa como parámetro. Obviamente el tamaño del array que se
+     * devuelve será menor o igual al que se pasa como parámetro.
+     * 
+     * @param x un array de números enteros
+     * @return array de integers con los números capicúa. Si no existe ningún número
+     *         capicúa en x, se devuelve un array con el número -1 como único
+     *         elemento.
+     **/
+
+    public static int[] filtraCapicuas(int x[]) {
+        int countPalindromics = 0;
+        int[] palindromicsPositions = new int[x.length];
+
+        for (int i = 0; i < x.length; i++) {
+            if (maths.General.esCapicua(x[i])) {
+                palindromicsPositions[countPalindromics] = i;
+                countPalindromics++;
+            }
+        }
+        if (countPalindromics == 0) {
+            int[] notFound = { -1 };
+            return notFound;
+        }
+        int[] palindromics = new int[countPalindromics];
+        for (int i = 0; i < countPalindromics; i++) {
+            palindromics[i] = x[palindromicsPositions[i]];
+        }
+        return palindromics;
+    }
+
 }
