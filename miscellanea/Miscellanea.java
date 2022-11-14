@@ -38,4 +38,40 @@ public class Miscellanea {
         return sticks;
     }
 
+    /**
+     * Ejercicio 36
+     * Devuelve un array con todos los números primos que se encuentren en otro
+     * array que se pasa como parámetro.
+     * 
+     * @param x un array de números enteros
+     * @return un array de menor tamaño que el pasado por parámetros. Devuelve un
+     *         array con -1 si no encuentra ningún número primo.
+     **/
+
+    public static int[] filterPrimes(int x[]) {
+        int[] primesPositions = new int[x.length];
+        int countPrimes = 0;
+        for (int i = 0; i < x.length; i++) {
+            Boolean isPrime = true;
+            if (x[i] < 2)
+                isPrime = false;
+            for (int j = 2; j <= x[i] / 2 && isPrime; j++)
+                if (x[i] % j == 0)
+                    isPrime = false;
+
+            if (isPrime) {
+                primesPositions[countPrimes] = i;
+                countPrimes++;
+            }
+        }
+        if (countPrimes == 0) {
+            int[] notFound = { -1 };
+            return notFound;
+        }
+        int[] primes = new int[countPrimes];
+        for (int i = 0; i < countPrimes; i++)
+            primes[i] = x[primesPositions[i]];
+        return primes;
+    }
+
 }
