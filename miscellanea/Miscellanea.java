@@ -52,13 +52,7 @@ public class Miscellanea {
         int[] primesPositions = new int[x.length];
         int countPrimes = 0;
         for (int i = 0; i < x.length; i++) {
-            Boolean isPrime = true;
-            if (x[i] < 2)
-                isPrime = false;
-            for (int j = 2; j <= x[i] / 2 && isPrime; j++)
-                if (x[i] % j == 0)
-                    isPrime = false;
-
+            Boolean isPrime = maths.General.esPrimo(x[i]);
             if (isPrime) {
                 primesPositions[countPrimes] = i;
                 countPrimes++;
