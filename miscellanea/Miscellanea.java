@@ -67,4 +67,39 @@ public class Miscellanea {
             primes[i] = x[primesPositions[i]];
         return primes;
     }
+
+    /**
+     * Ejercicio 37
+     * Convierte un número n al sistema Morse y lo devuelve en una cadena de
+     * caracteres.
+     * 
+     * @param n un número entero
+     * @return String del número convertido a palotes.
+     **/
+
+    public static String convierteEnMorse(int n) {
+        String[] morseArray = {
+                "_ _ _ _ _ ",
+                ". _ _ _ _ ",
+                ". . _ _ _ ",
+                ". . . _ _ ",
+                ". . . . _ ",
+                ". . . . . ",
+                "_ . . . . ",
+                "_ _ . . . ",
+                "_ _ _ . . ",
+                "_ _ _ _ . ",
+        };
+        int digits = maths.General.digitos(n);
+        String[] numMorseArray = new String[digits];
+        for (int i = 0; i < digits; i++) {
+            numMorseArray[i] = morseArray[n % 10];
+            n /= 10;
+        }
+        String morse = "";
+        for (int i = digits - 1; i >= 0; i--) {
+            morse += numMorseArray[i];
+        }
+        return morse;
+    }
 }
