@@ -17,8 +17,8 @@ public class Ejercicio36 {
 
         int[] arrayPrimes = { 3, 4, 5, 6, 7 };
         int[] arrayNotPrimes = { 1, 4, -5 };
-        int[] primes = Miscellanea.filterPrimes(arrayPrimes);
-        int[] notPrimes = Miscellanea.filterPrimes(arrayNotPrimes);
+        int[] primes = Miscellanea.filtraPrimos(arrayPrimes);
+        int[] notPrimes = Miscellanea.filtraPrimos(arrayNotPrimes);
 
         System.out.println("Return pasando por parámetros un array de tamaño 5 con 3 números primos: ");
         for (int i = 0; i < primes.length; i++)

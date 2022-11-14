@@ -22,7 +22,7 @@ public class Bidimensional {
      *         vacío en caso de error
      **/
 
-    public static int[][] createArrayBiInt(int n, int m, int min, int max) {
+    public static int[][] generaArrayBiInt(int n, int m, int min, int max) {
         int[][] array = new int[n][m];
         if (min >= max)
             return array;
@@ -41,7 +41,7 @@ public class Bidimensional {
      *         vacío en caso de error
      **/
 
-    public static int[] rowOfArrayBiInt(int array[][], int irow) {
+    public static int[] filaDeArrayBiInt(int array[][], int irow) {
         int length = array[irow].length;
         int[] row = new int[length];
         for (int j = 0; j < length; j++)
@@ -58,7 +58,7 @@ public class Bidimensional {
      *         vacío en caso de error
      **/
 
-    public static int[] columnOfArrayBiInt(int array[][], int jcolumn) {
+    public static int[] columnaDeArrayBiInt(int array[][], int jcolumn) {
         int length = array.length;
         int[] column = new int[length];
         for (int i = 0; i < length; i++)
@@ -78,7 +78,7 @@ public class Bidimensional {
      *         devuelve {-1,-1}
      **/
 
-    public static int[] coordinatesInArrayBiInt(int array[][], int n) {
+    public static int[] coordenadasEnArrayBiInt(int array[][], int n) {
         int rows = array.length;
         int columns = array[0].length;
         int[] position = { -1, -1 };
@@ -104,9 +104,9 @@ public class Bidimensional {
      *         <code> false </code> si no lo es.
      **/
 
-    public static boolean isiMinjMax(int array[][], int row, int column) {
-        int max = Array.maxArrayInt(columnOfArrayBiInt(array, column));
-        int min = Array.minArrayInt(rowOfArrayBiInt(array, row));
+    public static boolean esPuntoDeSilla(int array[][], int row, int column) {
+        int max = Array.maximoArrayInt(columnaDeArrayBiInt(array, column));
+        int min = Array.minimoArrayInt(filaDeArrayBiInt(array, row));
         boolean isiMinjMax = (array[row][column] == min && array[row][column] == max) ? true : false;
         return isiMinjMax;
     }

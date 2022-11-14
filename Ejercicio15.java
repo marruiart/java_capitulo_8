@@ -15,7 +15,7 @@ public class Ejercicio15 {
         
         for (int i = min; i <= max; i++) {
             tmp = prime;
-            prime = General.nextPrime(i);
+            prime = General.siguientePrimo(i);
             if (prime != tmp && prime <= max)
                 System.out.printf("%d  ", prime);
         }

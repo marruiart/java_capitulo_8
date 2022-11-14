@@ -16,7 +16,7 @@ public class General {
      * @return la cantidad de dígitos que contiene el número.
      **/
 
-    public static int digits(long num) {
+    public static int digitos(long num) {
         int length = 0;
         while (num > 0) {
             length++;
@@ -70,7 +70,7 @@ public class General {
 
     public static int digitN(long num, int position) {
         int nDigit = 0;
-        int length = digits(num);
+        int length = digitos(num);
         long units = power(10, length - 1);
         for (int i = 0; i <= position; i++) {
             nDigit = (int) (num / units);
@@ -91,8 +91,8 @@ public class General {
      * 
      **/
 
-    public static int digitPosition(long num, int digit) {
-        int length = digits(num);
+    public static int posicionDeDigito(long num, int digit) {
+        int length = digitos(num);
         long units = power(10, length - 1);
 
         for (int position = 0; position < length; position++) {
@@ -113,7 +113,7 @@ public class General {
      * @return el número con n dígitos eliminados.
      **/
 
-    public static long removeFromEnd(long num, int nDigits) {
+    public static long quitaPorDetras(long num, int nDigits) {
         for (int i = 0; i < nDigits; i++)
             num /= 10;
         return num;
@@ -127,8 +127,8 @@ public class General {
      * @return el número con n dígitos eliminados.
      **/
 
-    public static long removeFromBeginning(long num, int nDigits) {
-        int length = digits(num);
+    public static long quitaPorDelante(long num, int nDigits) {
+        int length = digitos(num);
         long units = power(10, length - 1);
         for (int i = 0; i < nDigits; i++) {
             num %= units;
@@ -145,7 +145,7 @@ public class General {
      * @return
      **/
 
-    public static long addAtEnd(long num, int digit) {
+    public static long pegaPorDetras(long num, int digit) {
         num = num * 10 + digit;
         return num;
     }
@@ -158,8 +158,8 @@ public class General {
      * @return
      **/
 
-    public static long addAtBeginning(long num, int digit) {
-        int lenght = digits(num);
+    public static long pegaPorDelante(long num, int digit) {
+        int lenght = digitos(num);
         long units = power(10, lenght);
         num += digit * units;
         return num;
@@ -175,8 +175,8 @@ public class General {
      *         incluir esta.
      **/
 
-    public static long numberSlice(long num, int start, int end) {
-        int lenght = digits(num);
+    public static long trozoDeNumero(long num, int start, int end) {
+        int lenght = digitos(num);
         long units = power(10, lenght - start);
         num %= units;
         units = power(10, lenght - end);
@@ -192,8 +192,8 @@ public class General {
      * @return devuelve un número formado por los dos números unidos.
      **/
 
-    public static long joinNumbers(int num1, int num2) {
-        int lenght = digits(num2);
+    public static long juntaNumeros(int num1, int num2) {
+        int lenght = digitos(num2);
         long units = power(10, lenght);
         long joinedNum = num1 * units + num2;
         return joinedNum;
@@ -206,7 +206,7 @@ public class General {
      * @return <code> true </code> si es capicúa <code> false </code> si no lo es.
      **/
 
-    public static boolean isPalindromic(long num) {
+    public static boolean esCapicua(long num) {
         long flippedNum = flip(num);
         if (num == flippedNum)
             return true;
@@ -221,7 +221,7 @@ public class General {
      * @return <code> true </code> si es primo <code> false </code> si no lo es.
      **/
 
-    public static boolean isPrime(long num) {
+    public static boolean esPrimo(long num) {
         if (num <= 1)
             return false;
         for (int i = 2; i <= num / 2; i++)
@@ -237,13 +237,13 @@ public class General {
      * @return
      **/
 
-    public static long nextPrime(long num) {
+    public static long siguientePrimo(long num) {
         long prime;
         if (num <= 0)
             return 2;
         for (int i = 1; i <= num * 2; i++) {
             prime = num + i;
-            if (isPrime(prime))
+            if (esPrimo(prime))
                 return prime;
         }
         return -1;

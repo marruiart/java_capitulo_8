@@ -17,7 +17,7 @@ public class Miscellanea {
      * @return String del número convertido a palotes.
      **/
 
-    public static String convertToSticks(int n) {
+    public static String convierteEnPalotes(int n) {
         String sticks = "";
         int length = 0;
         int num = n;
@@ -48,7 +48,7 @@ public class Miscellanea {
      *         array con -1 si no encuentra ningún número primo.
      **/
 
-    public static int[] filterPrimes(int x[]) {
+    public static int[] filtraPrimos(int x[]) {
         int[] primesPositions = new int[x.length];
         int countPrimes = 0;
         for (int i = 0; i < x.length; i++) {
@@ -73,5 +73,4 @@ public class Miscellanea {
             primes[i] = x[primesPositions[i]];
         return primes;
     }
-
 }

@@ -12,7 +12,7 @@ public class Ejercicio16 {
         int max = 99999;
 
         for (int i = min; i <= max; i++)
-            if (General.isPalindromic(i))
+            if (General.esCapicua(i))
                 System.out.printf("%d ", i);
     }
 }

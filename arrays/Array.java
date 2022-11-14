@@ -20,7 +20,7 @@ public class Array {
      *         vacío en caso de error
      **/
 
-    public static int[] createArrayInt(int size, int min, int max) {
+    public static int[] generaArrayInt(int size, int min, int max) {
         int[] array = new int[size];
         if (min >= max)
             return array;
@@ -36,7 +36,7 @@ public class Array {
      * @return un entero que indica el mínimo del array.
      **/
 
-    public static int minArrayInt(int[] array) {
+    public static int minimoArrayInt(int[] array) {
         int min = (int) Math.pow(2, 32);
         for (int i = 0; i < array.length; i++)
             if (array[i] < min)
@@ -51,7 +51,7 @@ public class Array {
      * @return un entero que indica el máximo del array.
      **/
 
-    public static int maxArrayInt(int[] array) {
+    public static int maximoArrayInt(int[] array) {
         int max = (int) Math.pow(2, 32) * -1 - 1;
         for (int i = 0; i < array.length; i++)
             if (array[i] > max)
@@ -66,7 +66,7 @@ public class Array {
      * @return un float que indica la media de los números del array.
      **/
 
-    public static float averageArrayInt(int[] array) {
+    public static float mediaArrayInt(int[] array) {
         int sum = 0;
         float average;
         for (int i = 0; i < array.length; i++)
@@ -84,7 +84,7 @@ public class Array {
      *         <code> false </code> si no se encuentra.
      **/
 
-    public static boolean isInArray(int[] array, int num) {
+    public static boolean estaEnArrayInt(int[] array, int num) {
         for (int i = 0; i < array.length; i++)
             if (array[i] == num)
                 return true;
@@ -101,7 +101,7 @@ public class Array {
      *         encuentra
      **/
 
-    public static int positionInArray(int[] array, int num) {
+    public static int posicionEnArray(int[] array, int num) {
         for (int i = 0; i < array.length; i++)
             if (array[i] == num)
                 return i;
@@ -115,7 +115,7 @@ public class Array {
      * @return el array volteado
      **/
 
-    public static int[] flipArray(int[] array) {
+    public static int[] volteaArrayInt(int[] array) {
         int length = array.length;
         int[] flippedArray = new int[length];
         for (int i = 0; i < length; i++)
@@ -132,7 +132,7 @@ public class Array {
      *         superior o igual al tamaño del array o un número negativo
      **/
 
-    public static int[] rotateArrayToRight(int[] array, int n) {
+    public static int[] rotaDerechaArrayInt(int[] array, int n) {
         int length = array.length;
         int[] rotatedArray = new int[length];
         if (n >= length || n < 0)
@@ -156,7 +156,7 @@ public class Array {
      *         es superior o igual al tamaño del array o un número negativo
      **/
 
-    public static int[] rotateArrayToLeft(int[] array, int n) {
+    public static int[] rotaIzquierdaArrayInt(int[] array, int n) {
         int length = array.length;
         int[] rotatedArray = new int[length];
         if (n >= length || n < 0)

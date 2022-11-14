@@ -17,6 +17,6 @@ public class Ejercicio35 {
 
     public static void main(String[] args) {
         int n = 470213;
-        System.out.print(Miscellanea.convertToSticks(n));
+        System.out.print(Miscellanea.convierteEnPalotes(n));
     }
 }
