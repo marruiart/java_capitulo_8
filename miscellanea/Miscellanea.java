@@ -171,4 +171,41 @@ public class Miscellanea {
         return numInWords;
     }
 
+    /**
+     * Devuelve un array con todos los números que contienen el 7 (por ej. 7, 27,
+     * 782) que se encuentren en otro array que se pasa como parámetro. El tamaño
+     * del array que se devuelve será menor o igual al que se pasa como parámetro.
+     * 
+     * @param x un array de números enteros
+     * @return array de integers con los números capicúa. Si no existe ningún número
+     *         capicúa en x, se devuelve un array con el número -1 como único
+     *         elemento.
+     **/
+
+    public static int[] filtraCon7(int x[]) {
+        int count7 = 0;
+        int[] sevenPositions = new int[x.length];
+
+        for (int i = 0; i < x.length; i++) {
+            int tmp = x[i];
+            while (tmp > 0) {
+                if (tmp % 10 == 7) {
+                    sevenPositions[count7] = i;
+                    count7++;
+                }
+                tmp /= 10;
+            }
+        }
+
+        if (count7 == 0) {
+            int[] notFound7 = { -1 };
+            return notFound7;
+        }
+
+        int[] array7 = new int[count7];
+        for (int i = 0; i < count7; i++)
+            array7[i] = x[sevenPositions[i]];
+
+        return array7;
+    }
 }
