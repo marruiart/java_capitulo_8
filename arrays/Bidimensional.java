@@ -110,5 +110,68 @@ public class Bidimensional {
         return isiMinjMax;
     }
 
+    /**
+     * Devuelve un array que contiene una de las diagonales del array bidimensional
+     * que se pasa como parámetro. La fila y la columna determinan el número que
+     * marcará las dos posibles diagonales dentro del array.
+     * 
+     * @param array     array bidimensional de enteros
+     * @param direction la cadena “nose” indica que se elige la diagonal que va del
+     *                  noroeste hacia el sureste, mientras que la cadena “neso”
+     *                  indica que se elige la diagonal que va del noreste hacia el
+     *                  suroeste.
+     * @param row       posición del número en la fila
+     * @param column    posición del número en la columna
+     * @return un array con los números de la diagonal. En caso de error, devuelve
+     *         un array vacío
+     **/
 
+    public static int[] diagonal(int array[][], String direction, int row, int column) {
+        int rows = array.length;
+        int columns = array[0].length;
+        int[] diagonal = new int[columns];
+
+        if (!direction.equals("nose") && !direction.equals("neso"))
+            return diagonal;
+        else {
+            int i = 0;
+            int j = 0;
+            int k = 0;
+            int itmp = i;
+            if (direction.equals("nose")) {
+                if (column - row >= 0)
+                    j = column - row;
+                else {
+                    i = row - column;
+                    j = 0;
+                }
+
+                while (k < rows - itmp && j < columns && i < rows) {
+                    diagonal[k] = array[i][j];
+                    j++;
+                    i++;
+                    k++;
+                }
+            } else if (direction.equals("neso")) {
+                if (column + row < columns)
+                    j = column + row;
+                else {
+                    j = columns - 1;
+                    i = row - (columns - column) + 1;
+                }
+                itmp = i;
+                while (k < rows - itmp && j >= 0) {
+                    diagonal[k] = array[i][j];
+                    j--;
+                    i++;
+                    k++;
+                }
+            }
+
+            int[] diagonalLength = new int[k];
+            for (i = 0; i < k; i++)
+                diagonalLength[i] = diagonal[i];
+            return diagonalLength;
+        }
+    }
 }
