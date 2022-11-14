@@ -31,7 +31,7 @@ public class Ejercicio19 {
         int i = 0;
         while (numBase > 0) {
             int lastDigit = (int) (numBase % 10);
-            num10 += (General.power(base, i) * lastDigit);
+            num10 += (General.potencia(base, i) * lastDigit);
             numBase /= 10;
             i++;
         }
@@ -46,7 +46,7 @@ public class Ejercicio19 {
         for (int i = 0; i < num16.length(); i++) {
             char c = num16.charAt(i);
             int charNum = (c >= 'a' && c <= 'f') ? (int) (c - 87) : (int) (c - '0');
-            num10 += General.power(16, (num16.length() - i - 1)) * charNum;
+            num10 += General.potencia(16, (num16.length() - i - 1)) * charNum;
         }
         if (convertBase == 10)
             System.out.print(num10);

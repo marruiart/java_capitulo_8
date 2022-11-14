@@ -33,7 +33,7 @@ public class General {
      * @return la potencia de la base elevada al exponente.
      **/
 
-    public static long power(int base, int exponent) {
+    public static long potencia(int base, int exponent) {
         long power = 1;
         for (int i = 0; i < exponent; i++) {
             power *= base;
@@ -71,7 +71,7 @@ public class General {
     public static int digitN(long num, int position) {
         int nDigit = 0;
         int length = digitos(num);
-        long units = power(10, length - 1);
+        long units = potencia(10, length - 1);
         for (int i = 0; i <= position; i++) {
             nDigit = (int) (num / units);
             num %= units;
@@ -93,7 +93,7 @@ public class General {
 
     public static int posicionDeDigito(long num, int digit) {
         int length = digitos(num);
-        long units = power(10, length - 1);
+        long units = potencia(10, length - 1);
 
         for (int position = 0; position < length; position++) {
             int nDigit = (int) (num / units);
@@ -129,7 +129,7 @@ public class General {
 
     public static long quitaPorDelante(long num, int nDigits) {
         int length = digitos(num);
-        long units = power(10, length - 1);
+        long units = potencia(10, length - 1);
         for (int i = 0; i < nDigits; i++) {
             num %= units;
             units /= 10;
@@ -160,7 +160,7 @@ public class General {
 
     public static long pegaPorDelante(long num, int digit) {
         int lenght = digitos(num);
-        long units = power(10, lenght);
+        long units = potencia(10, lenght);
         num += digit * units;
         return num;
     }
@@ -177,9 +177,9 @@ public class General {
 
     public static long trozoDeNumero(long num, int start, int end) {
         int lenght = digitos(num);
-        long units = power(10, lenght - start);
+        long units = potencia(10, lenght - start);
         num %= units;
-        units = power(10, lenght - end);
+        units = potencia(10, lenght - end);
         num /= units;
         return num;
     }
@@ -194,7 +194,7 @@ public class General {
 
     public static long juntaNumeros(int num1, int num2) {
         int lenght = digitos(num2);
-        long units = power(10, lenght);
+        long units = potencia(10, lenght);
         long joinedNum = num1 * units + num2;
         return joinedNum;
     }

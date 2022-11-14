@@ -19,7 +19,7 @@ public class Ejercicio17 {
         int i = 0;
         while (binary > 0) {
             int lastDigit = (int) (binary % 10);
-            decimal += (General.power(2, i) * lastDigit);
+            decimal += (General.potencia(2, i) * lastDigit);
             binary /= 10;
             i++;
         }
