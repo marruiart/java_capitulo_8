@@ -1,6 +1,7 @@
 
 /**
- * Este programa llama a una función que 
+ * Este programa llama a una función que convierte los números de un 
+ * array en un String y los imprime por pantalla
  *
  * @author: Marina Ruiz Artacho
  **/

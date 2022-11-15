@@ -1,7 +1,7 @@
 
 /**
- * Este programa llama a una función que pinta un valle con montañas 
- * huecas a los lados.
+ * Este programa llama a una función que une dos arrays que
+ * se pasan por parámetros e imprime el array combinado.
  *
  * @author: Marina Ruiz Artacho
  **/
