@@ -171,4 +171,20 @@ public class Array {
         return rotatedArray;
     }
 
+    /**
+     * Esta función toma como parámetro un array que contiene números y devuelve una
+     * cadena de caracteres con esos números.
+     * 
+     * @param a un array de números enteros
+     * @return una cadena de caracteres con los números.
+     **/
+
+    public static String convierteArrayEnString(int[] a) {
+        String numStr = "";
+        if (a.length > 0)
+            for (int i = 0; i < a.length; i++)
+                numStr += a[i];
+        return numStr;
+    }
+
 }
