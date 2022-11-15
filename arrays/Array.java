@@ -211,4 +211,33 @@ public class Array {
         return joinedArray;
     }
 
+    /**
+     * Esta función toma dos arrays como parámetros y devuelve un array que es el
+     * resultado de mezclar los números de ambos de forma alterna, se coge un número
+     * de a, luego de b, luego de a, etc. Los arrays a y b pueden tener longitudes
+     * diferentes; por tanto, si se terminan los números de un array se terminan de
+     * coger todos los que quedan del otro.
+     * 
+     * @param a primer array de números enteros
+     * @param b segundo array de números enteros
+     * @return un array resultado de mezclar a y b.
+     **/
+
+    public static int[] mezcla(int[] a, int[] b) {
+        int aLength = a.length;
+        int bLength = b.length;
+        int length = aLength + bLength;
+        int maxLength = aLength > bLength ? aLength : bLength;
+        int[] mixedArray = new int[length];
+        int j = 0;
+        for (int i = 0; i < maxLength; i++) {
+            if (j <= length - maxLength) {
+                mixedArray[j++] = a[i];
+                mixedArray[j++] = b[i];
+            } else
+                mixedArray[j++] = aLength > bLength ? a[i] : b[i];
+        }
+        return mixedArray;
+    }
+
 }
