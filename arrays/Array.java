@@ -187,4 +187,28 @@ public class Array {
         return numStr;
     }
 
+    /**
+     * Esta función toma dos arrays como parámetros y devuelve un array que es el
+     * resultado de concatenar ambos.
+     * 
+     * @param a primer array de números enteros
+     * @param b segundo array de números enteros
+     * @return un array resultado de concatenar a y b.
+     **/
+
+    public static int[] concatena(int[] a, int[] b) {
+        int length = a.length + b.length;
+        int[] joinedArray = new int[length];
+        int j = 0;
+        while (j < a.length) {
+            joinedArray[j] = a[j];
+            j++;
+        }
+        for (int i = 0; i < b.length; i++) {
+            joinedArray[j] = b[i];
+            j++;
+        }
+        return joinedArray;
+    }
+
 }
