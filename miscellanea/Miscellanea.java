@@ -208,4 +208,36 @@ public class Miscellanea {
 
         return array7;
     }
+
+    /**
+     * Esta función devuelve el número de veces que aparece un dígito dentro de un
+     * número (primera función) o bien el número de veces que aparece un dígito en
+     * una serie de números contenidos en un array (segunda función).
+     * 
+     * @param digit el dígito que se busca
+     * @param n     un número en el que se va a buscar el dígito
+     * @param a     un array de enteros en los que se va a buscar el dígito
+     * @return el número de veces que aparece el dígito.
+     **/
+
+    public static int ocurrencias(int digit, int n) {
+        int length = maths.General.digitos(n);
+        int units = (int) maths.General.potencia(10, length - 1);
+        int count = 0;
+        for (int i = 0; i < length; i++) {
+            int nDigit = n / units;
+            if (nDigit == digit)
+                count++;
+            n %= units;
+            units /= 10;
+        }
+        return count;
+    }
+
+    public static int ocurrencias(int digit, int[] a) {
+        int count = 0;
+        for (int i = 0; i < a.length; i++)
+            count += ocurrencias(digit, a[i]);
+        return count;
+    }
 }
