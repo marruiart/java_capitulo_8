@@ -254,4 +254,37 @@ public class Array {
         int num = a[(int) Math.random() * a.length];
         return num;
     }
+
+    /**
+     * Esta función toma como parámetro un array de cadenas de caracteres y devuelve
+     * otro array con los mismos valores, habiendo eliminado las posibles
+     * repeticiones. Se distinguen mayúsculas de minúsculas, por tanto "hola" es
+     * distinto de "Hola".
+     * 
+     * @param a un array de números enteros
+     * @return un número contenido en una posición aleatoria de a.
+     **/
+
+    public static String[] sinRepetir(String[] s) {
+        int sLength = s.length;
+        int count = 0;
+        int[] repeatedPositions = new int[sLength];
+
+        for (int i = 0; i < sLength; i++)
+            for (int j = sLength - 1; j > i; j--)
+                if (s[i].equals(s[j]))
+                    repeatedPositions[count++] = j;
+
+        String[] sCopy = new String[sLength - count];
+        int k = 0;
+        for (int i = 0; i < sLength; i++) {
+            Boolean isRepeated = false;
+            for (int j = 0; j < count; j++)
+                if (repeatedPositions[j] == i)
+                    isRepeated = true;
+            if (!isRepeated)
+                sCopy[k++] = s[i];
+        }
+        return sCopy;
+    }
 }
