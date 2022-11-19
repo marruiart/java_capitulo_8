@@ -21,6 +21,7 @@ public class Ejercicio49 {
             if (n < 3)
                 System.out.println("Número incorrecto");
         } while (n < 3);
+        s.close();
 
         int[] a = { 1 };
         for (int i = 1; i <= n; i++) {
