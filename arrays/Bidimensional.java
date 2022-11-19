@@ -175,4 +175,29 @@ public class Bidimensional {
             return diagonalLength;
         }
     }
+
+    /**
+     * Busca el número que hay dentro de un array bidimensional en la posición
+     * n-ésima contando de izquierda a derecha y de arriba abajo, como si se
+     * estuviera leyendo. El primer elemento es el 0.
+     * 
+     * @param array    array bidimensional de enteros
+     * @param position posición buscada en el array
+     * @return un número que se encuentra en la posición n-ésima del array
+     *         bidimensional. Retorna -1 si la posición donde se busca no existe en
+     *         el array.
+     **/
+
+    public static int nEsimo(int[][] array, int position) {
+        int num = -1;
+        int count = 0;
+        for (int i = 0; i < array.length; i++)
+            for (int j = 0; j < array[i].length; j++) {
+                if (count == position)
+                    num = array[i][j];
+                count++;
+            }
+        return num;
+    }
+
 }
