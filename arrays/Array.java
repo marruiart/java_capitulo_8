@@ -240,4 +240,18 @@ public class Array {
         return mixedArray;
     }
 
+    /**
+     * Esta función debe devolver un número del array escogido al azar entre todos
+     * los disponibles. Por ejemplo, si a = {111, 222, 333, 444},
+     * aleatorioDeArray(a) podría devolver el 111, el 222, el 333 o el 444. Si b =
+     * {52, 37}, aleatorioDeArray(b) podría devolver el 52 o el 37.
+     * 
+     * @param a un array de números enteros
+     * @return un número contenido en una posición aleatoria de a.
+     **/
+
+    public static int aleatorioDeArray(int[] a) {
+        int num = a[(int) Math.random() * a.length];
+        return num;
+    }
 }
