@@ -200,4 +200,40 @@ public class Bidimensional {
         return num;
     }
 
+    /**
+     * Esta función es capaz de extraer la capa exterior de un array bidimensional.
+     * Esta capa se extrae en forma de array de una dimensión. La extracción de
+     * números comienza en la esquina superior izquierda y continúa en el sentido de
+     * las agujas del reloj.
+     * 
+     * @param n un array bidimensional de números enteros
+     * @return un array de números enteros con la corteza de n.
+     **/
+
+    public static int[] corteza(int[][] n) {
+        int rows = n.length;
+        int columns = n[0].length;
+        int[] cortex = new int[rows * 2 + (columns - 2) * 2];
+        int count = 0;
+        int contraCount = cortex.length - 1;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                if (i == 0)
+                    cortex[count++] = n[i][j];
+                else if (j == 0 && i != rows - 1) {
+                    System.out.println("i = " + i + " j = " + j);
+                    System.out.println("count = " + count);
+                    System.out.println("contraCount = " + contraCount);
+                    cortex[contraCount--] = n[i][j];
+                } else if (j == columns - 1 && i != rows - 1)
+                    cortex[count++] = n[i][j];
+                else if (i == rows - 1) {
+                    cortex[contraCount--] = n[i][j];
+                }
+            }
+        }
+
+        return cortex;
+    }
+
 }
