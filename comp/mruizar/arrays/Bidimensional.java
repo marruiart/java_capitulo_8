@@ -1,4 +1,4 @@
-package arrays;
+package comp.mruizar.arrays;
 
 /**
  * Ejercicios 29 - 34

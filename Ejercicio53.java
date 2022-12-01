@@ -8,8 +8,8 @@
  * @author: Marina Ruiz Artacho
  **/
 
-import arrays.Array;
-import arrays.Bidimensional;
+import comp.mruizar.arrays.Array;
+import comp.mruizar.arrays.Bidimensional;
 
 public class Ejercicio53 {
 

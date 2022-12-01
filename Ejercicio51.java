@@ -8,18 +8,17 @@
  * @author: Marina Ruiz Artacho
  **/
 
-import arrays.Array;
-import maths.General;
+import comp.mruizar.arrays.Array;
+import comp.mruizar.maths.*;
 
 public class Ejercicio51 {
-
     public static void main(String[] args) {
         int[] a = Array.generaArrayInt(10, 2, 100);
         for (int i = 0; i < a.length; i++)
             System.out.printf("%d ", a[i]);
         for (int i = 0; i < a.length; i++) {
-             System.out.printf("El %d %s y %s.\n", a[i], General.esPrimo(i) ? "es primo" : "no es primo",
-                    General.esCapicua(a[i]) ? "es capicúa" : "no es capicúa"); 
+            System.out.printf("El %d %s y %s.\n", a[i], General.esPrimo(i) ? "es primo" : "no es primo",
+                    General.esCapicua(a[i]) ? "es capicúa" : "no es capicúa");
         }
     }
 }

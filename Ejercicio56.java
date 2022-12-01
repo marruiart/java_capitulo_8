@@ -7,7 +7,7 @@
  * @author: Marina Ruiz Artacho
  **/
 
-import arrays.Bidimensional;
+import comp.mruizar.arrays.Bidimensional;
 
 public class Ejercicio56 {
 

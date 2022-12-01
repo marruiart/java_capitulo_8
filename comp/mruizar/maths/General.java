@@ -1,4 +1,4 @@
-package maths;
+package comp.mruizar.maths;
 
 /**
  * Ejercicios 1 - 14

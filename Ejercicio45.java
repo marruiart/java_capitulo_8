@@ -5,7 +5,8 @@
  * @author: Marina Ruiz Artacho
  **/
 
-import piramids.Piramid;
+import comp.mruizar.piramids.Piramid;
+;
 
 public class Ejercicio45 {
 

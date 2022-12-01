@@ -6,7 +6,7 @@
  **/
 
 import java.util.Scanner;
-import maths.General;
+import comp.mruizar.maths.*;
 
 public class Ejercicio19 {
 

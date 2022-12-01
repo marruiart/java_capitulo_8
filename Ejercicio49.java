@@ -7,8 +7,9 @@
  * @author: Marina Ruiz Artacho
  **/
 
-import arrays.Array;
 import java.util.Scanner;
+
+import comp.mruizar.arrays.Array;
 
 public class Ejercicio49 {
 

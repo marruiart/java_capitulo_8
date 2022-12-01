@@ -1,10 +1,11 @@
-import maths.General;
 
 /**
  * Este programa muestra los números capicúa que hay entre 1 y 99999
  *
  * @author: Marina Ruiz Artacho
  **/
+
+import comp.mruizar.maths.*;
 
 public class Ejercicio16 {
     public static void main(String[] args) {

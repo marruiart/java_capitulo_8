@@ -1,4 +1,4 @@
-package piramids;
+package comp.mruizar.piramids;
 
 public class Piramid {
 

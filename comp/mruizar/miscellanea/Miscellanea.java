@@ -1,4 +1,4 @@
-package miscellanea;
+package comp.mruizar.miscellanea;
 
 /**
  * Biblioteca de funciones miscelánea.
@@ -52,7 +52,7 @@ public class Miscellanea {
         int[] primesPositions = new int[x.length];
         int countPrimes = 0;
         for (int i = 0; i < x.length; i++) {
-            Boolean isPrime = maths.General.esPrimo(x[i]);
+            Boolean isPrime = comp.mruizar.maths.General.esPrimo(x[i]);
             if (isPrime) {
                 primesPositions[countPrimes] = i;
                 countPrimes++;
@@ -90,7 +90,7 @@ public class Miscellanea {
                 "_ _ _ . . ",
                 "_ _ _ _ . ",
         };
-        int digits = maths.General.digitos(n);
+        int digits = comp.mruizar.maths.General.digitos(n);
         String[] numMorseArray = new String[digits];
         for (int i = 0; i < digits; i++) {
             numMorseArray[i] = morseArray[n % 10];
@@ -119,7 +119,7 @@ public class Miscellanea {
         int[] palindromicsPositions = new int[x.length];
 
         for (int i = 0; i < x.length; i++) {
-            if (maths.General.esCapicua(x[i])) {
+            if (comp.mruizar.maths.General.esCapicua(x[i])) {
                 palindromicsPositions[countPalindromics] = i;
                 countPalindromics++;
             }
@@ -156,7 +156,7 @@ public class Miscellanea {
                 "ocho",
                 "nueve"
         };
-        int digits = maths.General.digitos(n);
+        int digits = comp.mruizar.maths.General.digitos(n);
         String[] numWords = new String[digits];
         for (int i = 0; i < digits; i++) {
             numWords[i] = wordsArray[n % 10];
@@ -221,8 +221,8 @@ public class Miscellanea {
      **/
 
     public static int ocurrencias(int digit, int n) {
-        int length = maths.General.digitos(n);
-        int units = (int) maths.General.potencia(10, length - 1);
+        int length = comp.mruizar.maths.General.digitos(n);
+        int units = (int) comp.mruizar.maths.General.potencia(10, length - 1);
         int count = 0;
         for (int i = 0; i < length; i++) {
             int nDigit = n / units;

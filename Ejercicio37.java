@@ -6,7 +6,7 @@
  * @author: Marina Ruiz Artacho
  **/
 
-import miscellanea.Miscellanea;
+import comp.mruizar.miscellanea.Miscellanea;
 
 public class Ejercicio37 {
 

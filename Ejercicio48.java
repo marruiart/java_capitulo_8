@@ -6,7 +6,7 @@
  * @author: Marina Ruiz Artacho
  **/
 
-import arrays.Array;
+import comp.mruizar.arrays.Array;
 
 public class Ejercicio48 {
 
