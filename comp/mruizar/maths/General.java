@@ -17,6 +17,8 @@ public class General {
      **/
 
     public static int digitos(long num) {
+        if (num < 0)
+            num = -num;
         if (num == 0)
             return 1;
         int length = 0;
@@ -77,16 +79,10 @@ public class General {
      * @return el número que está en la posición n.
      **/
 
-    public static int digitN(long num, int position) {
-        int nDigit = 0;
-        int length = digitos(num);
-        double units = potencia(10, length - 1);
-        for (int i = 0; i <= position; i++) {
-            nDigit = (int) (num / units);
-            num %= units;
-            units /= 10;
-        }
-        return nDigit;
+    public static int digitoN(long num, int position) {
+        if (position < 0 || position >= digitos(num))
+            return -1;
+        return (int) (voltea(num) / (long) potencia(10, position)) % 10;
     }
 
     /**
