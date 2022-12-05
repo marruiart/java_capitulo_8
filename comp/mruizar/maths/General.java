@@ -82,7 +82,7 @@ public class General {
     public static int digitoN(long num, int position) {
         if (position < 0 || position >= digitos(num))
             return -1;
-        return (int) (voltea(num) / (long) potencia(10, position)) % 10;
+        return (int) (quitaPorDetras(voltea(num), position)) % 10;
     }
 
     /**
@@ -120,10 +120,12 @@ public class General {
      * @return el número con n dígitos eliminados.
      **/
 
-    public static long quitaPorDetras(long num, int nDigits) {
-        for (int i = 0; i < nDigits; i++)
-            num /= 10;
-        return num;
+    public static long quitaPorDetras(long num, int n) {
+        return num / (long) potencia(10, n);
+    }
+
+    public static long quitaPorDetras(int num, int n) {
+        return quitaPorDetras((long) num, n);
     }
 
     /**
