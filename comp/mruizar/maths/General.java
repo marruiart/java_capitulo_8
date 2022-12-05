@@ -17,10 +17,12 @@ public class General {
      **/
 
     public static int digitos(long num) {
+        if (num == 0)
+            return 1;
         int length = 0;
         while (num > 0) {
-            length++;
             num /= 10;
+            length++;
         }
         return length;
     }
@@ -33,30 +35,37 @@ public class General {
      * @return la potencia de la base elevada al exponente.
      **/
 
-    public static long potencia(int base, int exponent) {
-        long power = 1;
-        for (int i = 0; i < exponent; i++) {
-            power *= base;
-        }
-        return power;
+    public static double potencia(double base, int exponent) {
+        if (exponent == 0)
+            return (double) 1;
+        if (exponent < 0) /* Si exponente negativo -> x^(-y) == 1 / (x^y) */
+            return (double) (1 / potencia(base, -exponent));
+        double x = 1;
+        while (exponent-- > 0)
+            x *= base;
+        return x;
     }
 
     /**
      * Le da la vuelta a un número y devuelve el número volteado.
      * 
      * @param num un número entero.
-     * @return el número volteado.
+     * @return el número {@code long} volteado.
      **/
 
-    public static long flip(long num) {
+    public static long voltea(long num) {
         long flippedNumber = 0;
         while (num > 0) {
-            int lastDigit = (int) num % 10;
+            long lastDigit = num % 10;
             flippedNumber *= 10;
             flippedNumber += lastDigit;
             num /= 10;
         }
         return flippedNumber;
+    }
+
+    public static long voltea(int num) {
+        return (voltea((long) num));
     }
 
     /**
@@ -71,7 +80,7 @@ public class General {
     public static int digitN(long num, int position) {
         int nDigit = 0;
         int length = digitos(num);
-        long units = potencia(10, length - 1);
+        double units = potencia(10, length - 1);
         for (int i = 0; i <= position; i++) {
             nDigit = (int) (num / units);
             num %= units;
@@ -93,7 +102,7 @@ public class General {
 
     public static int posicionDeDigito(long num, int digit) {
         int length = digitos(num);
-        long units = potencia(10, length - 1);
+        double units = potencia(10, length - 1);
 
         for (int position = 0; position < length; position++) {
             int nDigit = (int) (num / units);
@@ -124,12 +133,12 @@ public class General {
      * 
      * @param num     un número entero.
      * @param nDigits número de dígitos a eliminar.
-     * @return el número con n dígitos eliminados.
+     * @return el número {@code long} con n dígitos eliminados.
      **/
 
     public static long quitaPorDelante(long num, int nDigits) {
         int length = digitos(num);
-        long units = potencia(10, length - 1);
+        double units = potencia(10, length - 1);
         for (int i = 0; i < nDigits; i++) {
             num %= units;
             units /= 10;
@@ -160,7 +169,7 @@ public class General {
 
     public static long pegaPorDelante(long num, int digit) {
         int lenght = digitos(num);
-        long units = potencia(10, lenght);
+        double units = potencia(10, lenght);
         num += digit * units;
         return num;
     }
@@ -177,7 +186,7 @@ public class General {
 
     public static long trozoDeNumero(long num, int start, int end) {
         int lenght = digitos(num);
-        long units = potencia(10, lenght - start);
+        double units = potencia(10, lenght - start);
         num %= units;
         units = potencia(10, lenght - end);
         num /= units;
@@ -194,9 +203,9 @@ public class General {
 
     public static long juntaNumeros(int num1, int num2) {
         int lenght = digitos(num2);
-        long units = potencia(10, lenght);
-        long joinedNum = num1 * units + num2;
-        return joinedNum;
+        double units = potencia(10, lenght);
+        double joinedNum = num1 * units + num2;
+        return (long) joinedNum;
     }
 
     /**
@@ -207,11 +216,15 @@ public class General {
      **/
 
     public static boolean esCapicua(long num) {
-        long flippedNum = flip(num);
+        long flippedNum = voltea(num);
         if (num == flippedNum)
             return true;
         else
             return false;
+    }
+
+    public static boolean esCapicua(int num) {
+        return (esCapicua((long) num));
     }
 
     /**
@@ -230,6 +243,10 @@ public class General {
         return true;
     }
 
+    public static boolean esPrimo(int num) {
+        return esPrimo((long) num);
+    }
+
     /**
      * Devuelve el menor primo que es mayor al número que se pasa como parámetro.
      * 
@@ -238,15 +255,13 @@ public class General {
      **/
 
     public static long siguientePrimo(long num) {
-        long prime;
-        if (num <= 0)
-            return 2;
-        for (int i = 1; i <= num * 2; i++) {
-            prime = num + i;
-            if (esPrimo(prime))
-                return prime;
+        while (!esPrimo(++num)) {
         }
-        return -1;
+        return num;
+    }
+
+    public static long siguientePrimo(int num) {
+        return siguientePrimo((long) num);
     }
 
 }
