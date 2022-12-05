@@ -97,17 +97,19 @@ public class General {
      **/
 
     public static int posicionDeDigito(long num, int digit) {
-        int length = digitos(num);
-        double units = potencia(10, length - 1);
-
-        for (int position = 0; position < length; position++) {
-            int nDigit = (int) (num / units);
-            if (nDigit == digit)
+        num = voltea(num);
+        int position = 0;
+        while (num > 0) {
+            if (num % 10 == digit)
                 return position;
-            num %= units;
-            units /= 10;
+            position++;
+            num /= 10;
         }
         return -1;
+    }
+
+    public static int posicionDeDigito(int num, int digit) {
+        return posicionDeDigito((long) num, digit);
     }
 
     /**
