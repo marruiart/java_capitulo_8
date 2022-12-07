@@ -251,9 +251,9 @@ public class General {
     /**
      * Devuelve el menor primo que es mayor al número que se pasa como parámetro.
      * 
-     * @param
+     * @param num
      * @return
-     **/
+     */
 
     public static long siguientePrimo(long num) {
         while (!esPrimo(++num)) {

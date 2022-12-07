@@ -15,12 +15,10 @@ public class Ejercicio17 {
         long binary = s.nextLong();
         s.close();
         long decimal = 0;
-        int i = 0;
-        while (binary > 0) {
-            int lastDigit = (int) (binary % 10);
+        int len = General.digitos(binary);
+        for (int i = 0; i < len; i++) {
+            int lastDigit = General.digitoN(binary, len - 1 - i);
             decimal += (General.potencia(2, i) * lastDigit);
-            binary /= 10;
-            i++;
         }
         System.out.print(decimal);
     }
