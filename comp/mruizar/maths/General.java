@@ -124,8 +124,8 @@ public class General {
         return num / (long) potencia(10, n);
     }
 
-    public static long quitaPorDetras(int num, int n) {
-        return quitaPorDetras((long) num, n);
+    public static int quitaPorDetras(int num, int n) {
+        return (int) quitaPorDetras((long) num, n);
     }
 
     /**
