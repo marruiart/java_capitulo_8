@@ -178,17 +178,19 @@ public class General {
      * 
      * @param start posición incial (inclusive)
      * @param end   posición final de corte (no inclusive)
-     * @return el fragmento del número entre la posición inicial y la final, sin
-     *         incluir esta.
+     * @return el fragmento (en valor absoluto) del {@code long} entre la
+     *         posición inicial y la final, sin incluir esta.
      **/
 
     public static long trozoDeNumero(long num, int start, int end) {
-        int lenght = digitos(num);
-        double units = potencia(10, lenght - start);
-        num %= units;
-        units = potencia(10, lenght - end);
-        num /= units;
-        return num;
+        int len = digitos(num);
+        if (start < 0 || start > end || end >= len)
+            return -1;
+        return quitaPorDetras(quitaPorDelante(num, start), len - end - 1);
+    }
+
+    public static int trozoDeNumero(int num, int start, int end) {
+        return (int) trozoDeNumero((long) num, start, end);
     }
 
     /**
