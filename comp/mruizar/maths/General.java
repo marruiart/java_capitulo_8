@@ -198,14 +198,15 @@ public class General {
      * 
      * @param num1 primer número
      * @param num2 segundo número
-     * @return devuelve un número formado por los dos números unidos.
+     * @return devuelve un {@code long} formado por los dos números unidos.
      **/
 
+    public static long juntaNumeros(long num1, long num2) {
+        return num1 * (long) potencia(10, digitos(num1)) + num2;
+    }
+
     public static long juntaNumeros(int num1, int num2) {
-        int lenght = digitos(num2);
-        double units = potencia(10, lenght);
-        double joinedNum = num1 * units + num2;
-        return (long) joinedNum;
+        return juntaNumeros((long) num1, (long) num2);
     }
 
     /**
