@@ -136,14 +136,12 @@ public class General {
      * @return el número {@code long} con n dígitos eliminados.
      **/
 
-    public static long quitaPorDelante(long num, int nDigits) {
-        int length = digitos(num);
-        double units = potencia(10, length - 1);
-        for (int i = 0; i < nDigits; i++) {
-            num %= units;
-            units /= 10;
-        }
-        return num;
+    public static long quitaPorDelante(long num, int n) {
+        return quitaPorDetras(voltea(quitaPorDetras(voltea(pegaPorDetras(num, 1)), n)), 1);
+    }
+
+    public static long quitaPorDelante(int num, int n) {
+        return quitaPorDelante((long) num, n);
     }
 
     /**
@@ -202,7 +200,7 @@ public class General {
      **/
 
     public static long juntaNumeros(long num1, long num2) {
-        return num1 * (long) potencia(10, digitos(num1)) + num2;
+        return num1 * (long) potencia(10, digitos(num2)) + num2;
     }
 
     public static long juntaNumeros(int num1, int num2) {
