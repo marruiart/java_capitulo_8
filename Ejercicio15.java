@@ -5,7 +5,7 @@
  * @author: Marina Ruiz Artacho
  **/
 
-import comp.mruizar.maths.General;;
+import comp.mruizar.maths.General;
 
 public class Ejercicio15 {
     public static void main(String[] args) {

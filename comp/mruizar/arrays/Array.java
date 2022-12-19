@@ -37,7 +37,7 @@ public class Array {
      **/
 
     public static int minimoArrayInt(int[] array) {
-        int min = (int) Math.pow(2, 32);
+        int min = Integer.MAX_VALUE;
         for (int i = 0; i < array.length; i++)
             if (array[i] < min)
                 min = array[i];
@@ -52,7 +52,7 @@ public class Array {
      **/
 
     public static int maximoArrayInt(int[] array) {
-        int max = (int) Math.pow(2, 32) * -1 - 1;
+        int max = Integer.MIN_VALUE;
         for (int i = 0; i < array.length; i++)
             if (array[i] > max)
                 max = array[i];
@@ -135,14 +135,14 @@ public class Array {
     public static int[] rotaDerechaArrayInt(int[] array, int n) {
         int length = array.length;
         int[] rotatedArray = new int[length];
-        if (n >= length || n < 0)
-            return rotatedArray;
         int j = n;
-        for (int i = 0; i < length; i++) {
-            if (j >= length)
-                j = 0;
-            rotatedArray[j] = array[i];
-            j++;
+        if (length > 0) {
+            for (int i = 0; i < length; i++) {
+                if (j >= length)
+                    j = 0;
+                rotatedArray[j] = array[i];
+                j++;
+            }
         }
         return rotatedArray;
     }
